@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHINAGAWA</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo-bar-group">
+        <div class="logo">
+          <img src="/static/img/logo-shinagawa.png" alt="Logo Shinagawa" style="height:22px;" />
+        </div>
+        <div class="navbar-right-bar"></div>
+      </div>
+      <ul>
+        <li>
+          <div class="nav-icon-label nav-icon-label-horizontal">
+            <img src="../static/img/icon-product.png" alt="Produtos" class="icon-png nav-menu-icon" />
+            <span>Produtos</span>
+          </div>
+        </li>
+        <li class="active">
+          <div class="nav-icon-label nav-icon-label-horizontal">
+            <img src="/static/img/icon-Equipas.png" alt="Equipas" class="icon-png nav-menu-icon" />
+            <span>Equipas</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon-label nav-icon-label-horizontal">
+            <img src="/static/img/icon-document.png" alt="Relatórios" class="icon-png nav-menu-icon" />
+            <span>Relatórios</span>
+          </div>
+        </li>
+      </ul>
+      <div class="user-menu">
+        <button class="icon-btn" title="Notificações"><img src="/static/img/icon-alert.png" alt="Notificações" class="icon-png" /></button>
+        <button class="icon-btn" title="Configurações"><img src="/static/img/icon-config.png" alt="Configurações" class="icon-png" /></button>
+        <span class="user-initial">M</span>
+        <button class="icon-btn user-arrow" id="userMenuBtn" title="Menu usuário" onclick="toggleUserMenu()"><img src="/static/img/icon-down-arrow.png" alt="Abrir menu" class="icon-png" /></button>
+        <div id="userDropdown" class="user-dropdown" style="display:none;">
+          <a href="#" onclick="editarCadastro(event)"><img src="/static/img/icon-edit.png" alt="Editar" />Editar cadastro</a>
+          <a href="#" onclick="sairConta(event)"><img src="/static/img/icon-exit.png" alt="Sair" />Sair</a>
+        </div>
+      </div>
+    </nav>
+    <main class="dashboard">
+      <aside class="sidebar">
+        <h3>Equipas</h3>
+        <ul>
+          <li>Equipe 1</li>
+          <li>Equipe 2</li>
+          <li>Equipe 3</li>
+          <li class="active">Equipe 4</li>
+          <li>Equipe 5</li>
+          <li>Equipe 6</li>
+          <li>Equipe 7</li>
+          <li>Equipe 8</li>
+        </ul>
+      </aside>
+      <section class="main-content">
+        <h1 class="team-title">Equipe 4</h1>
+        <div class="dashboard-cards">
+          <div class="card produtos-card">
+            <h2>Produtos</h2>
+            <table class="produtos-table">
+              <tr>
+                <td>
+                  <div class="tag green"></div> <span class="prod-nome">Panela de aço 01</span>
+                </td>
+                <td>
+                  <span class="status-users-row">
+                    <span class="status manutencao">Em Manutenção</span>
+                    <span class="prod-users">
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U1" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U2" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U3" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U4" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U5" />
+                      <span class="user-more">+2</span>
+                    </span>
+                  </span>
+                </td>
+                <td>0d</td>
+                <td>50M€</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="tag blue"></div> <span class="prod-nome">Canal 1 Alto-forno 1</span>
+                </td>
+                <td>
+                  <span class="status-users-row">
+                    <span class="status curso">Em Curso</span>
+                    <span class="prod-users">
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U1" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U2" />
+                    </span>
+                  </span>
+                </td>
+                <td>5d</td>
+                <td>105K€</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="tag purple"></div> <span class="prod-nome">Panela de gusa 05</span>
+                </td>
+                <td>
+                  <span class="status-users-row">
+                    <span class="status parado">Parado</span>
+                    <span class="prod-users"><img src="/static/img/user1.png" class="user-avatar" alt="U3" /></span>
+                  </span>
+                </td>
+                <td>1w</td>
+                <td>2M€</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="tag pink borda-esquerda"></div> <span class="prod-nome">Panela de gusa 02</span>
+                </td>
+                <td>
+                  <span class="status-users-row">
+                    <span class="status espera">Em Espera</span>
+                    <span class="prod-users">
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U2" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U4" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U5" />
+                    </span>
+                  </span>
+                </td>
+                <td>28w</td>
+                <td>2.5K€</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="tag pink"></div> <span class="prod-nome">Carro Torpedo 10</span>
+                </td>
+                <td>
+                  <span class="status-users-row">
+                    <span class="status espera">Em Espera</span>
+                    <span class="prod-users">
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U1" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U2" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U3" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U4" />
+                      <img src="/static/img/user1.png" class="user-avatar" alt="U5" />
+                    </span>
+                  </span>
+                </td>
+                <td>50w</td>
+                <td>1.5M€</td>
+              </tr>
+            </table>
+          </div>
+          <div class="card relatorios-card">
+            <h2>Últimos Relatórios</h2>
+            <ul class="relatorios-list">
+              <!-- Alternância de cor nos relatórios para melhor visualização -->
+              <li class="relatorio-dark">
+                Relatório 1 <button class="download-btn" aria-label="Baixar Relatório 1"></button>
+              </li>
+              <li class="relatorio-light">
+                Relatório 2 <button class="download-btn" aria-label="Baixar Relatório 2"></button>
+              </li>
+              <li class="relatorio-dark">
+                Relatório 3 <button class="download-btn" aria-label="Baixar Relatório 3"></button>
+              </li>
+              <li class="relatorio-light">
+                Relatório 4 <button class="download-btn" aria-label="Baixar Relatório 4"></button>
+              </li>
+              <li class="relatorio-dark">
+                Relatório 5 <button class="download-btn" aria-label="Baixar Relatório 5"></button>
+              </li>
+            </ul>
+            <a href="#" class="ver-mais">Ver mais</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../scripts/script-dash.js"></script>
+  </body>
+</html>
