@@ -535,8 +535,8 @@ body {
 
 .event {
   position: absolute;
-  left: 1px;
-  right: 1px;
+  left: 0px;
+  right: 0px;
   background-color: var(--tag-blue);
   color: white;
   padding: 3px 5px;
