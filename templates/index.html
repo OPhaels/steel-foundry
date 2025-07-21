@@ -58,9 +58,10 @@
             src="/static/img/icon-alert.png"
             alt="Notificações"
             class="icon-png"
+            onclick="editarCadastro(event)"
           />
         </button>
-        <button class="icon-btn" title="Configurações">
+        <button class="icon-btn" title="Configurações" onclick="editarCadastro(event)">
           <img
             src="/static/img/icon-config.png"
             alt="Configurações"
@@ -316,7 +317,7 @@
         <h2>Calendário</h2>
         <div class="calendar-container">
           <div class="calendar-grid">
-            <div class="day-label"><img src="/static/img/icon-time.png" class="user-avatar"></div>
+            <div class="icon-hour"><img src="/static/img/icon-time.png" class="user-avatar"></div>
             <div class="day-label">Seg</div>
             <div class="day-label">Ter</div>
             <div class="day-label">Qua</div>
@@ -341,7 +342,7 @@
       </section>
     </main>
     <footer class="footer">
-      <p>&copy; 2023 Shinagawa. Todos os direitos reservados.</p> 
+      <p>&copy; 2025 Shinagawa. Todos os direitos reservados.</p> 
       <script src="{% static 'scripts/script-dash.js' %}?v="></script>
   </body>
 </html>

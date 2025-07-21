@@ -28,7 +28,7 @@ function closeUserMenuOnClickOutside(e) {
 }
 function editarCadastro(e) {
   e.preventDefault();
-  alert("Funcionalidade de editar cadastro em breve!");
+  alert("Funcionalidade disponível em breve!");
 }
 function sairConta(e) {
   e.preventDefault();
